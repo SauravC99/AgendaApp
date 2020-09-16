@@ -21,6 +21,7 @@ public class LogInPage extends AppCompatActivity {
     /** Called when the user taps the Send button */
     public void sendMessage(View view) {
         Intent intent = new Intent(this, StartUpPage.class);
+
         EditText userName = (EditText) findViewById(R.id.editTextTextEmailAddress);
         EditText password = (EditText) findViewById(R.id.editTextTextPassword);
         String messageUser = userName.getText().toString();
@@ -34,12 +35,6 @@ public class LogInPage extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
          */
-    }
-
-    public void goToGuestLogin(View view) {
-        //what is view view?
-        Intent intent_guestLogIn = new Intent(this, GuestLogInPage.class);
-        startActivity(intent_guestLogIn);
     }
 
 }
