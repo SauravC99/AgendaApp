@@ -19,6 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     <TextView
         android:id="@+id/textView1"
@@ -37,6 +38,9 @@
 
 
 
+=======
+</androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> parent of 0b88978... Added log in menu
 =======
 </androidx.constraintlayout.widget.ConstraintLayout>
 >>>>>>> parent of 0b88978... Added log in menu
