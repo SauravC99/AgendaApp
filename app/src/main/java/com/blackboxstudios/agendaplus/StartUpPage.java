@@ -41,5 +41,7 @@ public class StartUpPage extends AppCompatActivity {
          */
 
 
+        //do I do anything in here for Guest Page?
+
     }
 }
