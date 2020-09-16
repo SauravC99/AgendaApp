@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class DisplayMessageActivity extends AppCompatActivity {
+public class StartUpPage extends AppCompatActivity {
 
     //String example = "This is a test to insert a string into a textView\n\n";
 
@@ -17,8 +17,8 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
-        String userName = intent.getStringExtra(MainActivity.USERNAME_MESSAGE);
-        String pass = intent.getStringExtra(MainActivity.PASSWORD_MESSAGE);
+        String userName = intent.getStringExtra(LogInPage.USERNAME_MESSAGE);
+        String pass = intent.getStringExtra(LogInPage.PASSWORD_MESSAGE);
 
         // Capture the layout's TextView and set the string as its text
         TextView textView = findViewById(R.id.textView);

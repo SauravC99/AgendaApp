@@ -6,4 +6,5 @@
     <string name="edit_password">Password</string>
     <string name="button_signIn">Sign In</string>
     <string name="button_createAcc">Create Account</string>
+    <string name="button_guestSignIn">Guest Sign In</string>
 </resources>

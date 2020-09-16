@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-public class MainActivity extends AppCompatActivity {
+public class LogInPage extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.blackboxstudios.agendaplus.MESSAGE";
     public static final String USERNAME_MESSAGE = "user";
     public static final String PASSWORD_MESSAGE = "pass";
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     /** Called when the user taps the Send button */
     public void sendMessage(View view) {
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
+        Intent intent = new Intent(this, StartUpPage.class);
 
         EditText userName = (EditText) findViewById(R.id.editTextTextEmailAddress);
         EditText password = (EditText) findViewById(R.id.editTextTextPassword);
