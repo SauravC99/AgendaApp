@@ -18,14 +18,17 @@ public class GuestLogInPage extends AppCompatActivity {
         setContentView(R.layout.activity_guest_log_in_page);
     }
 
-    public void getGuestName(View view) {
-        Intent intent = new Intent(this, StartUpPage.class);
 
-        EditText userName = (EditText) findViewById(R.id.editTextTextEmailAddress);
-        EditText password = (EditText) findViewById(R.id.editTextTextPassword);
-        String messageUser = userName.getText().toString();
-        String messagePass = password.getText().toString();
-        intent.putExtra(USERNAME_MESSAGE, messageUser);
-        startActivity(intent);
+    //in theory, create intent for Guest
+    //allows guest to type name
+    //moves over
+    //starts intent activity
+    public void getGuestName(View view) {
+        Intent intentGuest = new Intent(this, StartUpPage.class);
+
+        EditText guestName = (EditText) findViewById(R.id.editTextTextEmailAddress);
+        String messageUser = guestName.getText().toString();
+        intentGuest.putExtra(GUESTNAME_MESSAGE, messageUser);
+        startActivity(intentGuest);
     }
 }

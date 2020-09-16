@@ -39,5 +39,7 @@ public class StartUpPage extends AppCompatActivity {
         TextView textView = findViewById(R.id.textView);
         textView.setText(example + message);
          */
+
+
     }
 }

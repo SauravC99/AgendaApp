@@ -36,6 +36,8 @@ public class LogInPage extends AppCompatActivity {
          */
     }
 
+
+    //move to guest login page
     public void goToGuestLogin(View view) {
         //what is view view?
         Intent intent_guestLogIn = new Intent(this, GuestLogInPage.class);
