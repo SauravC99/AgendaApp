@@ -80,4 +80,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/createAccountButton" />
 
+    <Button
+        android:id="@+id/guestLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guest Login"
+        tools:layout_editor_absoluteX="-15dp"
+        tools:layout_editor_absoluteY="445dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
