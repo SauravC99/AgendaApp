@@ -11,6 +11,7 @@ public class LogInPage extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.blackboxstudios.agendaplus.MESSAGE";
     public static final String USERNAME_MESSAGE = "user";
     public static final String PASSWORD_MESSAGE = "pass";
+    public static final String CAME_FROM = "c";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,8 +19,8 @@ public class LogInPage extends AppCompatActivity {
         setContentView(R.layout.activity_log_in_page);
     }
 
-    /** Called when the user taps the Send button */
-    public void sendMessage(View view) {
+    /** Called when the user taps the Sign In button */
+    public void signIn(View view) {
         Intent intent = new Intent(this, StartUpPage.class);
         EditText userName = (EditText) findViewById(R.id.editTextTextEmailAddress);
         EditText password = (EditText) findViewById(R.id.editTextTextPassword);
@@ -27,13 +28,11 @@ public class LogInPage extends AppCompatActivity {
         String messagePass = password.getText().toString();
         intent.putExtra(USERNAME_MESSAGE, messageUser);
         intent.putExtra(PASSWORD_MESSAGE, messagePass);
+
+        //This is so we know that this activity called the intent
+        intent.putExtra(CAME_FROM, "LogInPage");
+
         startActivity(intent);
-        /*
-        EditText editText = (EditText) findViewById(R.id.editTextTextPersonName);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
-         */
     }
 
     /** Called when the user taps the Guest Sign In button */

@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 
 public class GuestLogInPage extends AppCompatActivity {
-
     public static final String GUESTNAME_MESSAGE = "guestname";
+    public static final String CAME_FROM = "c";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,10 @@ public class GuestLogInPage extends AppCompatActivity {
         EditText guestName = (EditText) findViewById(R.id.guestName);
         String messageGuest = guestName.getText().toString();
         intent.putExtra(GUESTNAME_MESSAGE, messageGuest);
+
+        //This is so we know that this activity called the intent
+        intent.putExtra(CAME_FROM, "GuestLogInPage");
+
         startActivity(intent);
     }
 }
