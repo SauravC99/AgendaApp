@@ -7,6 +7,6 @@
     <string name="button_signIn">Sign In</string>
     <string name="button_createAcc">Create Account</string>
     <string name="button_guestSignIn">Guest Sign In</string>
-    <string name="guest_screen">Guest Screen</string>
-    <string name="guest_name">Guest Name</string>
+    <string name="screen_guest">Guest Sign In</string>
+    <string name="edit_guestName">Enter your name</string>
 </resources>

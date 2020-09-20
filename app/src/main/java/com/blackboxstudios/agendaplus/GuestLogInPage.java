@@ -9,7 +9,6 @@ import android.widget.EditText;
 
 public class GuestLogInPage extends AppCompatActivity {
 
-    public static final String EXTRA_MESSAGE = "com.blackboxstudios.agendaplus.MESSAGE"; //what is this for?
     public static final String GUESTNAME_MESSAGE = "guestname";
 
     @Override
@@ -19,16 +18,14 @@ public class GuestLogInPage extends AppCompatActivity {
     }
 
 
-    //in theory, create intent for Guest
-    //allows guest to type name
-    //moves over
-    //starts intent activity
+    //create intent for Start Up Page
+    //grab data put in by user
+    //sends it to next page
     public void getGuestName(View view) {
-        Intent intentGuest = new Intent(this, StartUpPage.class);
-
-        EditText guestName = (EditText) findViewById(R.id.editTextTextEmailAddress);
-        String messageUser = guestName.getText().toString();
-        intentGuest.putExtra(GUESTNAME_MESSAGE, messageUser);
-        startActivity(intentGuest);
+        Intent intent = new Intent(this, StartUpPage.class);
+        EditText guestName = (EditText) findViewById(R.id.guestName);
+        String messageGuest = guestName.getText().toString();
+        intent.putExtra(GUESTNAME_MESSAGE, messageGuest);
+        startActivity(intent);
     }
 }
