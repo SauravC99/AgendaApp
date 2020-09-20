@@ -13,7 +13,7 @@ public class StartUpPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_message);
+        setContentView(R.layout.activity_start_up_page);
 
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
@@ -29,7 +29,7 @@ public class StartUpPage extends AppCompatActivity {
 
         /*
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_message);
+        setContentView(R.layout.activity_start_up_page);
 
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();

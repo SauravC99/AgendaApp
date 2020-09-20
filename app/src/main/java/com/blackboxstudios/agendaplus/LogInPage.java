@@ -15,7 +15,7 @@ public class LogInPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_log_in_page);
     }
 
     /** Called when the user taps the Send button */
