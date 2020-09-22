@@ -22,8 +22,8 @@ public class LogInPage extends AppCompatActivity {
     /** Called when the user taps the Sign In button */
     public void signIn(View view) {
         Intent intent = new Intent(this, StartUpPage.class);
-        EditText userName = (EditText) findViewById(R.id.editTextTextEmailAddress);
-        EditText password = (EditText) findViewById(R.id.editTextTextPassword);
+        EditText userName = (EditText) findViewById(R.id.editTextEmailAddress);
+        EditText password = (EditText) findViewById(R.id.editTextPassword);
         String messageUser = userName.getText().toString();
         String messagePass = password.getText().toString();
         intent.putExtra(USERNAME_MESSAGE, messageUser);
