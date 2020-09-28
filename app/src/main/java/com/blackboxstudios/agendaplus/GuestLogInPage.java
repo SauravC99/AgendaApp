@@ -17,7 +17,7 @@ public class GuestLogInPage extends AppCompatActivity {
         setContentView(R.layout.activity_guest_log_in_page);
     }
 
-
+    //ex
     //create intent for Start Up Page
     //grab data put in by user
     //sends it to next page
