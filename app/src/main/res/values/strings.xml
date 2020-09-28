@@ -9,4 +9,6 @@
     <string name="button_guestSignIn">Guest Sign In</string>
     <string name="screen_guest">Guest Sign In</string>
     <string name="edit_guestName">Enter your name</string>
+    <string name="button_addClass">Add Class</string>
+    <string name="button_classExample">Class</string>
 </resources>

@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ZoomLinksPage"></activity>
         <activity
             android:name=".GuestLogInPage"
-            android:parentActivityName=".LogInPage">
-        </activity>
+            android:parentActivityName=".LogInPage"></activity>
         <activity
             android:name=".StartUpPage"
             android:parentActivityName=".LogInPage">
