@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".HomePage_Navigation"
+            android:label="@string/title_activity_home_page__navigation"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".GuestLogInPage"
-            android:parentActivityName=".LogInPage">
-        </activity>
+            android:parentActivityName=".LogInPage"></activity>
         <activity
             android:name=".StartUpPage"
             android:parentActivityName=".LogInPage">
