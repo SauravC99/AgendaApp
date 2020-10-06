@@ -29,6 +29,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AlarmPage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--defines the broadcast receiver in 'TheAlarm'-->
+        <receiver
+            android:name=".Alarm"
+            android:enabled="true"
+            android:exported="true"
+            />
     </application>
 
 </manifest>
