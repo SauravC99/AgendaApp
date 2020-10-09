@@ -14,8 +14,9 @@
 
         <activity
             android:name=".GuestLogInPage"
-            android:parentActivityName=".LogInPage">
-            android:exported="true"
+            android:parentActivityName=".LogInPage"
+            android:exported="true">
+
         </activity>
 
 
