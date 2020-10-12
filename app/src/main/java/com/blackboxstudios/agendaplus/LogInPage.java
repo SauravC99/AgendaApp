@@ -37,6 +37,7 @@ public class LogInPage extends AppCompatActivity {
 
     /** Called when the user taps the Guest Sign In button */
     public void goToGuestLogIn(View view) {
+        //Intent intent = new Intent(this, GuestLogInPage.class);
         Intent intent = new Intent(this, ZoomLinksPage.class);
         startActivity(intent);
     }
