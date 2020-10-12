@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.TextView;
 
 public class ZoomLinksPage extends AppCompatActivity {
     // Created an int array of Button ids
@@ -75,37 +75,59 @@ public class ZoomLinksPage extends AppCompatActivity {
 
     /** Called when the user taps a Class Button */
     public void insertClassDetails(final View view) {
-        // AlertDialog Builder - this is used to create the dialog box
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Add A Class");
+        Button b = findViewById(view.getId());
+        if (b.getText().toString().equals("Class")) {
+            // AlertDialog Builder - this is used to create the dialog box
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Add A Class");
 
-        // Set the layout to the dialog box layout - dialog_box_zoom_links.xml
-        final View dialogLayout = getLayoutInflater().inflate(R.layout.dialog_box_zoom_links, null);
-        builder.setView(dialogLayout);
+            // Set the layout to the dialog box layout - dialog_box_zoom_links.xml
+            final View dialogLayout = getLayoutInflater().inflate(R.layout.dialog_box_zoom_links, null);
+            builder.setView(dialogLayout);
 
-        // Add the Save button
-        builder.setPositiveButton("SAVE", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // Send user inputs from the AlertDialog to the Activity
-                // The EditTexts are text boxes in the xml
-                EditText editClassName = dialogLayout.findViewById(R.id.editTextClassName);
-                EditText editZoomLink = dialogLayout.findViewById(R.id.editTextZoomLink);
+            // Add the Save button
+            builder.setPositiveButton("SAVE", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // Send user inputs from the AlertDialog to the Activity
+                    // The EditTexts are text boxes in the xml
+                    EditText editClassName = dialogLayout.findViewById(R.id.editTextClassName);
+                    EditText editZoomLink = dialogLayout.findViewById(R.id.editTextFilledZoomLink);
 
-                saveClassDetails(editClassName.getText().toString(), view);
-                saveClassDetails(editZoomLink.getText().toString(), view);
-            }
-        });
-        // Create and show the dialog box
-        AlertDialog dialog = builder.create();
-        dialog.show();
+                    // Save the button name to the class
+                    Button a = findViewById(view.getId());
+                    a.setText(editClassName.getText().toString());
+                    //saveClassDetails(editClassName.getText().toString(), view);
+
+                    saveClassDetails(editZoomLink.getText().toString(), view);
+                }
+            });
+            // Create and show the dialog box
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
+        else {
+            // AlertDialog Builder - this is used to create the dialog box
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle(b.getText().toString());
+
+            // Set the layout to the dialog box layout - dialog_box_zoom_links_filled.xml
+            final View dialogLayout = getLayoutInflater().inflate(R.layout.dialog_box_zoom_links_filled, null);
+            builder.setView(dialogLayout);
+
+            TextView zoomLink = dialogLayout.findViewById(R.id.editTextFilledZoomLink);
+            zoomLink.setText("HI");
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
     }
 
     // Do something with the data coming from the AlertDialog
     // Takes in a View parameter so we know where the request came from
     private void saveClassDetails(String data, View view) {
-        Button a = findViewById(view.getId());
-        a.setText(data);
+        //Button a = findViewById(view.getId());
+        //a.setText(data);
         //Toast.makeText(this, data, Toast.LENGTH_SHORT).show();
     }
 
