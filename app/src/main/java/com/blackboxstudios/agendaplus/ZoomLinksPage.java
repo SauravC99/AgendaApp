@@ -31,18 +31,21 @@ public class ZoomLinksPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zoom_links_page);
 
+        pref = getPreferences(MODE_PRIVATE);
+
         // Created a list of Buttons and added the buttons on screen
         // We are doing i + 1 on line 26 cause buttonNames has 7, but buttonList has 6
         for (int i = 0; i < buttonList.length; i++) {
             buttonList[i] = findViewById(buttonNames[i + 1]);
         }
-        pref = getPreferences(MODE_PRIVATE);
+
         //Check if the button has been made visible by the user and set layout
-        for (Button b : buttonList) {
-            if (pref.contains(Integer.toString(b.getId()))) {
-                int vis = pref.getInt(Integer.toString(b.getId()), View.GONE);
-                b.setVisibility(vis);
-            }
+        if (pref.contains(COUNT)) {
+            count = pref.getInt(COUNT, 0);
+        }
+        for (int i = 0; i < count; i++) {
+            int vis = pref.getInt(Integer.toString(buttonList[i].getId()), View.GONE);
+            buttonList[i].setVisibility(vis);
         }
     }
 
@@ -50,7 +53,7 @@ public class ZoomLinksPage extends AppCompatActivity {
     public void addClass(View view) {
         pref = getPreferences(MODE_PRIVATE);
         editor = pref.edit();
-        //editor.remove("COUNT");
+
         //Get the num the counter was at last time user used this screen
         if (pref.contains(COUNT)) {
             count = pref.getInt(COUNT, 0);
@@ -60,22 +63,21 @@ public class ZoomLinksPage extends AppCompatActivity {
             count++;
             editor.putInt(COUNT, count);
             editor.apply();
-            //editor.clear();
         }
         //Iterate up to count and make those buttons visible if they are not
         for (int i = 0; i < count; i++) {
-            if (buttonList[i].getVisibility() == View.GONE) {
-                buttonList[i].setVisibility(View.VISIBLE);
-                editor.putInt(getString(buttonNames[i+1]), buttonList[i].getVisibility());
-                editor.apply();
-                //editor.clear();
-            }
+            buttonList[i].setVisibility(View.VISIBLE);
+            editor.putInt(Integer.toString(buttonList[i].getId()), buttonList[i].getVisibility());
+            editor.apply();
         }
     }
 
     /** Called when the user taps a Class Button */
     public void insertClassDetails(final View view) {
+        pref = getPreferences(MODE_PRIVATE);
+        editor = pref.edit();
         Button b = findViewById(view.getId());
+
         if (b.getText().toString().equals("Class")) {
             // AlertDialog Builder - this is used to create the dialog box
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -97,9 +99,12 @@ public class ZoomLinksPage extends AppCompatActivity {
                     // Save the button name to the class
                     Button a = findViewById(view.getId());
                     a.setText(editClassName.getText().toString());
-                    //saveClassDetails(editClassName.getText().toString(), view);
+                    String[] deets = {editClassName.getText().toString(), editZoomLink.getText().toString()};
 
-                    saveClassDetails(editZoomLink.getText().toString(), view);
+                    //saveClassDetails(editClassName.getText().toString(), view);
+                    //saveClassDetails(editZoomLink.getText().toString(), view);
+
+                    saveClassDetails(deets, view);
                 }
             });
             // Create and show the dialog box
@@ -125,7 +130,10 @@ public class ZoomLinksPage extends AppCompatActivity {
 
     // Do something with the data coming from the AlertDialog
     // Takes in a View parameter so we know where the request came from
-    private void saveClassDetails(String data, View view) {
+    private void saveClassDetails(String[] data, View view) {
+        pref = getPreferences(MODE_PRIVATE);
+        editor = pref.edit();
+
         //Button a = findViewById(view.getId());
         //a.setText(data);
         //Toast.makeText(this, data, Toast.LENGTH_SHORT).show();
