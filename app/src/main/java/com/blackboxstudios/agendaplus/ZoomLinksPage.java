@@ -4,7 +4,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -39,13 +41,15 @@ public class ZoomLinksPage extends AppCompatActivity {
             buttonList[i] = findViewById(buttonNames[i + 1]);
         }
 
-        //Check if the button has been made visible by the user and set layout
+        //Check if the button has been modified by the user and sets them accordingly
         if (pref.contains(COUNT)) {
             count = pref.getInt(COUNT, 0);
         }
         for (int i = 0; i < count; i++) {
             int vis = pref.getInt(Integer.toString(buttonList[i].getId()), View.GONE);
             buttonList[i].setVisibility(vis);
+            String text = pref.getString(String.valueOf(i + 1), "CLASS");
+            buttonList[i].setText(text);
         }
     }
 
@@ -121,10 +125,29 @@ public class ZoomLinksPage extends AppCompatActivity {
             builder.setView(dialogLayout);
 
             TextView zoomLink = dialogLayout.findViewById(R.id.editTextFilledZoomLink);
-            zoomLink.setText("HI");
+            final String link = pref.getString(count + "#", "");
+            zoomLink.setText(link);
 
             AlertDialog dialog = builder.create();
             dialog.show();
+
+            zoomLink.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String url = link;
+                    if (url.startsWith("https://") || url.startsWith("http://")) {
+                        Intent i = new Intent(Intent.ACTION_VIEW);
+                        i.setData(Uri.parse(url));
+                        startActivity(i);
+                    }
+                    else {
+                        url = "http://" + url;
+                        Intent i = new Intent(Intent.ACTION_VIEW);
+                        i.setData(Uri.parse(url));
+                        startActivity(i);
+                    }
+                }
+            });
         }
     }
 
@@ -134,6 +157,11 @@ public class ZoomLinksPage extends AppCompatActivity {
         pref = getPreferences(MODE_PRIVATE);
         editor = pref.edit();
 
+        editor.putString(String.valueOf(count), data[0]);
+        editor.apply();
+        String modded = count + "#";
+        editor.putString(modded, data[1]);
+        editor.apply();
         //Button a = findViewById(view.getId());
         //a.setText(data);
         //Toast.makeText(this, data, Toast.LENGTH_SHORT).show();
