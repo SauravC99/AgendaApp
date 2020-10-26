@@ -127,10 +127,10 @@ public class Calculator extends AppCompatActivity {
                 //Display error
             }
         }
-        String n[]=input.split("\\.");
+        String numbers[]=input.split("\\.");
         if(n.length>1){
-            if(n[1].equals("0")){
-                input=n[0];
+            if(numbers[1].equals("0")){
+                input=numbers[0];
             }
         }
         Screen.setText(input);
