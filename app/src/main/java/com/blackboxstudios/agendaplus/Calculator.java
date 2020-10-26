@@ -128,7 +128,7 @@ public class Calculator extends AppCompatActivity {
             }
         }
         String numbers[]=input.split("\\.");
-        if(n.length>1){
+        if(numbers.length>1){
             if(numbers[1].equals("0")){
                 input=numbers[0];
             }
