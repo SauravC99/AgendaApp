@@ -11,4 +11,6 @@
     <string name="edit_guestName">Enter your name</string>
     <string name="button_addClass">Add Class</string>
     <string name="button_classExample">Class</string>
+    <string name="button_ok">OK</string>
+    <string name="button_delete">Delete</string>
 </resources>

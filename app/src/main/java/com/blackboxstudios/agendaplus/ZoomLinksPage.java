@@ -128,7 +128,10 @@ public class ZoomLinksPage extends AppCompatActivity {
             final String link = pref.getString(count + "#", "");
             zoomLink.setText(link);
 
-            AlertDialog dialog = builder.create();
+            Button ok = dialogLayout.findViewById(R.id.button3);
+            Button delete = dialogLayout.findViewById(R.id.button11);
+
+            final AlertDialog dialog = builder.create();
             dialog.show();
 
             zoomLink.setOnClickListener(new View.OnClickListener() {
@@ -146,6 +149,12 @@ public class ZoomLinksPage extends AppCompatActivity {
                         i.setData(Uri.parse(url));
                         startActivity(i);
                     }
+                }
+            });
+            ok.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.hide();
                 }
             });
         }
