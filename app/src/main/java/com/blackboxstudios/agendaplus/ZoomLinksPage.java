@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ZoomLinksPage extends AppCompatActivity {
     // Created an int array of Button ids
@@ -24,6 +25,7 @@ public class ZoomLinksPage extends AppCompatActivity {
     Button[] buttonList = new Button[buttonNames.length - 1];
     int count = 0; //Count variable to keep track of visible buttons
     String COUNT = "COUNT";
+
 
     SharedPreferences pref;
     SharedPreferences.Editor editor;
@@ -171,6 +173,7 @@ public class ZoomLinksPage extends AppCompatActivity {
         String modded = count + "#";
         editor.putString(modded, data[1]);
         editor.apply();
+
         //Button a = findViewById(view.getId());
         //a.setText(data);
         //Toast.makeText(this, data, Toast.LENGTH_SHORT).show();
@@ -184,5 +187,14 @@ public class ZoomLinksPage extends AppCompatActivity {
         count = 0;
         editor.remove("COUNT");
         editor.apply();
+    }
+    public int getButtonNum(View view) {
+        int num = view.getId();
+        for(int i = 0; i < buttonNames.length; i++) {
+            if(buttonList[i].getId() == num) {
+                return i + 1;
+            }
+        }
+        return -1;
     }
 }
