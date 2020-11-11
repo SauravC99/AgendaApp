@@ -9,4 +9,12 @@
     <string name="button_guestSignIn">Guest Sign In</string>
     <string name="screen_guest">Guest Sign In</string>
     <string name="edit_guestName">Enter your name</string>
+    <string name="add_item_button">addItemButton</string>
+    <string name="view_calendar">View Calendar</string>
+    <string name="event_item">Event</string>
+    <string name="time_item">Time</string>
+    <string name="add_event_time">Add Event Time</string>
+    <string name="add_event_description">Add Event Description</string>
+    <string name="save">Save</string>
+    <string name="tv_date">Date</string>
 </resources>
