@@ -13,4 +13,7 @@
     <string name="help">Help</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="set_alarm">Set Alarm</string>
+    <string name="activity_home_navi_bar">Activity</string>
+    <string name="sign_in">Sign In</string>
 </resources>
