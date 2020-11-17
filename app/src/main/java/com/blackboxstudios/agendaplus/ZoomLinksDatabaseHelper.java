@@ -83,7 +83,11 @@ public class ZoomLinksDatabaseHelper extends SQLiteOpenHelper {
         String query = "SELECT * FROM " + ZOOMLINKSPAGE + " WHERE " + BUTTON_NUMBER + " = " + buttonNum;
 
         Cursor cursor = db.rawQuery(query, null);
-        ZoomClassModel model = new ZoomClassModel(cursor.getInt(0), cursor.getString(1), cursor.getString(2));
+        int buttonNumber = cursor.getInt(0);
+        String className = cursor.getString(1);
+        String link = cursor.getString(2);
+
+        ZoomClassModel model = new ZoomClassModel(buttonNumber, className, link);
         return model;
     }
 
