@@ -7,10 +7,10 @@ public class ZoomClassModel {
     private int buttonNum;
 
     // Constructors
-    public ZoomClassModel(String className, String link, int buttonNum) {
+    public ZoomClassModel(int buttonNum, String className, String link) {
+        this.buttonNum = buttonNum;
         this.className = className;
         this.link = link;
-        this.buttonNum = buttonNum;
     }
 
     public ZoomClassModel() {
@@ -46,9 +46,9 @@ public class ZoomClassModel {
     @Override
     public String toString() {
         return "ZoomClassModel{" +
-                "className='" + className + '\'' +
+                "buttonNum='" + buttonNum + '\'' +
+                ", className='" + className + '\'' +
                 ", link='" + link + '\'' +
-                ", buttonNum=" + buttonNum +
                 '}';
     }
 }
