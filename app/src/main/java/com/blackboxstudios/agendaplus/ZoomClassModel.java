@@ -42,7 +42,6 @@ public class ZoomClassModel {
     }
 
     //toString just in case we want to print this
-
     @Override
     public String toString() {
         return "ZoomClassModel{" +
