@@ -7,13 +7,7 @@ public class ZoomClassModel {
     //private int buttonNum;
 
     // Constructors
-    //public ZoomClassModel(int buttonNum, String className, String link) {
-        //this.buttonNum = buttonNum;
-        //this.className = className;
-        //this.link = link;
-    //}
     public ZoomClassModel(String className, String link) {
-        //this.buttonNum = buttonNum;
         this.className = className;
         this.link = link;
     }
@@ -37,14 +31,6 @@ public class ZoomClassModel {
     public void setLink(String link) {
         this.link = link;
     }
-
-    //public int getButtonNum() {
-        //return buttonNum;
-    //}
-
-    //public void setButtonNum(int buttonNum) {
-        //this.buttonNum = buttonNum;
-    //}
 
     //toString just in case we want to print this
     @Override

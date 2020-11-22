@@ -17,23 +17,12 @@ public class ZoomLinksDatabaseHelper extends SQLiteOpenHelper {
     public static final String ZOOMLINKSPAGE = "ZOOM_LINKS_PAGE_TABLE";
     public static final String COLUMN_CLASS_NAME = "CLASS_NAME";
     public static final String COLUMN_ZOOM_LINK = "ZOOM_LINK";
-    //public static final String BUTTON_NUMBER = "BUTTON_NUMBER";
 
     public ZoomLinksDatabaseHelper(@Nullable Context context) {
         super(context, "AgendaPlusZoomLinks.db", null, 1);
     }
 
     // Called the first time the database is accessed. Code to set up DB
-    /*
-    @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String createTableStatement = "CREATE TABLE " + ZOOMLINKSPAGE
-                + " (" + BUTTON_NUMBER + " INTEGER PRIMARY KEY, " + COLUMN_CLASS_NAME
-                + " TEXT, " + COLUMN_ZOOM_LINK + " TEXT)";
-
-        sqLiteDatabase.execSQL(createTableStatement);
-    }
-     */
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String createTableStatement = "CREATE TABLE " + ZOOMLINKSPAGE
@@ -55,7 +44,6 @@ public class ZoomLinksDatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
-        //cv.put(BUTTON_NUMBER, model.getButtonNum());
         cv.put(COLUMN_CLASS_NAME, model.getClassName());
         cv.put(COLUMN_ZOOM_LINK, model.getLink());
 
@@ -88,21 +76,6 @@ public class ZoomLinksDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    /*
-    public ZoomClassModel getSingleClass(int buttonNum) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT * FROM " + ZOOMLINKSPAGE + " WHERE " + BUTTON_NUMBER + " = " + buttonNum;
-
-        Cursor cursor = db.rawQuery(query, null);
-        int buttonNumber = cursor.getInt(0);
-        String className = cursor.getString(1);
-        String link = cursor.getString(2);
-
-        ZoomClassModel model = new ZoomClassModel(buttonNumber, className, link);
-        return model;
-    }
-     */
-
     public List<ZoomClassModel> getEverything() {
 
         List<ZoomClassModel> ev = new ArrayList<>();
@@ -119,7 +92,6 @@ public class ZoomLinksDatabaseHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             // Go through results and make objects and add to list
             do {
-                //int buttonNumber = cursor.getInt(0);
                 String className = cursor.getString(0);
                 String link = cursor.getString(1);
 
@@ -129,7 +101,7 @@ public class ZoomLinksDatabaseHelper extends SQLiteOpenHelper {
         }
         else {
             // don't add anything to the list
-            //remove
+            //remove this
         }
 
         // close things after we finish
