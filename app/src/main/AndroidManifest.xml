@@ -10,9 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ZoomLinksPage"
+            android:parentActivityName=".LogInPage"></activity>
+        <activity
             android:name=".GuestLogInPage"
-            android:parentActivityName=".LogInPage">
-        </activity>
+            android:parentActivityName=".LogInPage"></activity>
         <activity
             android:name=".StartUpPage"
             android:parentActivityName=".LogInPage">

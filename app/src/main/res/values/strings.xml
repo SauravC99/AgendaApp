@@ -17,4 +17,8 @@
     <string name="add_event_description">Add Event Description</string>
     <string name="save">Save</string>
     <string name="tv_date">Date</string>
+    <string name="button_addClass">Add Class</string>
+    <string name="button_classExample">Class</string>
+    <string name="button_ok">OK</string>
+    <string name="button_delete">Delete</string>
 </resources>
