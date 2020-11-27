@@ -60,4 +60,11 @@ public class HomePage_Navigation extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+
+
+
+    //how to implement navigate???
+
+    
 }
