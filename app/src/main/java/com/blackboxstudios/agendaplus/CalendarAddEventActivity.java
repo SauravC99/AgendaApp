@@ -9,11 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-public class AddEventActivity extends AppCompatActivity {
+public class CalendarAddEventActivity extends AppCompatActivity {
 
     private static final String TAG = "AddEventActivity";
 
@@ -39,7 +35,7 @@ public class AddEventActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_event_layout);
+        setContentView(R.layout.activity_calendar_add_event_layout);
         eventDesc = (EditText) findViewById(R.id.addEventDesc);
         eventTime = (EditText) findViewById(R.id.addEventTime);
         btnSubmitEvent = (Button) findViewById(R.id.btnSubmitEvent);
@@ -52,22 +48,22 @@ public class AddEventActivity extends AppCompatActivity {
         btnSubmitEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EventModel eventModel;
+                CalendarEventModel calendarEventModel;
                 try {
                     // String dateString = tvDate.getText().toString();
                     //long dateLong = stringToLong(dateString);
-                    eventModel = new EventModel(-1, tvDate.getText().toString(), eventDesc.getText().toString(), eventTime.getText().toString());
-                    Toast.makeText(AddEventActivity.this, eventModel.toString(), Toast.LENGTH_SHORT).show();
+                    calendarEventModel = new CalendarEventModel(-1, tvDate.getText().toString(), eventDesc.getText().toString(), eventTime.getText().toString());
+                    Toast.makeText(CalendarAddEventActivity.this, calendarEventModel.toString(), Toast.LENGTH_SHORT).show();
                 }
                 catch (Exception e) {
-                    Toast.makeText(AddEventActivity.this, "Error adding to the database.", Toast.LENGTH_SHORT).show();
-                    eventModel = new EventModel(-1, "Date Error", "Description Error", "Time Error");
+                    Toast.makeText(CalendarAddEventActivity.this, "Error adding to the database.", Toast.LENGTH_SHORT).show();
+                    calendarEventModel = new CalendarEventModel(-1, "Date Error", "Description Error", "Time Error");
                 }
-                DatabaseHelper dbHelper = new DatabaseHelper(AddEventActivity.this);
-                boolean test = dbHelper.addOne(eventModel);
-                Toast.makeText(AddEventActivity.this, "Success: " + test, Toast.LENGTH_SHORT).show();
+                CalendarDatabaseHelper dbHelper = new CalendarDatabaseHelper(CalendarAddEventActivity.this);
+                boolean test = dbHelper.addOne(calendarEventModel);
+                Toast.makeText(CalendarAddEventActivity.this, "Success: " + test, Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(AddEventActivity.this, CalendarActivity.class);
+                Intent intent = new Intent(CalendarAddEventActivity.this, CalendarActivity.class);
                 startActivity(intent);
             }
         });

@@ -4,23 +4,14 @@ import android.view.View;
 import android.widget.CalendarView;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.blackboxstudios.agendaplus.MainActivity;
-import com.blackboxstudios.agendaplus.R;
-
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
-import java.util.Date;
-import java.text.SimpleDateFormat;
-import java.text.ParseException;
 
 public class CalendarActivity extends AppCompatActivity {
 
@@ -36,7 +27,7 @@ public class CalendarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.calendar_layout);
+        setContentView(R.layout.activity_calendar_layout);
 
         mCalendarView = (CalendarView) findViewById(R.id.calendarView);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
@@ -54,7 +45,7 @@ public class CalendarActivity extends AppCompatActivity {
         btnAddNewEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CalendarActivity.this, AddEventActivity.class);
+                Intent intent = new Intent(CalendarActivity.this, CalendarAddEventActivity.class);
                 intent.putExtra("date", dateString);
                 startActivity(intent);
             }
@@ -62,8 +53,8 @@ public class CalendarActivity extends AppCompatActivity {
     }
 
     private void getAll() {
-        DatabaseHelper dbHelper = new DatabaseHelper(CalendarActivity.this);
-        List<EventModel> dateEvents = dbHelper.getAll();
+        CalendarDatabaseHelper dbHelper = new CalendarDatabaseHelper(CalendarActivity.this);
+        List<CalendarEventModel> dateEvents = dbHelper.getAll();
         for (int i = 0; i < dateEvents.size(); i++) {
             String event = dateEvents.get(i).toString();
             mEventStrings.add(event);
@@ -72,7 +63,7 @@ public class CalendarActivity extends AppCompatActivity {
     }
 
     private void getDateEvents(String dateString) {
-        DatabaseHelper dbHelper = new DatabaseHelper(CalendarActivity.this);
+        CalendarDatabaseHelper dbHelper = new CalendarDatabaseHelper(CalendarActivity.this);
         List<String> dateEvents = dbHelper.getAllDateEvents(dateString);
         for (int i = 0; i < dateEvents.size(); i++) {
             mEventStrings.add(dateEvents.get(i));

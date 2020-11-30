@@ -2,18 +2,18 @@ package com.blackboxstudios.agendaplus;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
-public class EventModel {
+public class CalendarEventModel {
 
     private int id;
     private String date;
     private String description;
     private String time;
 
-    public EventModel() {
+    public CalendarEventModel() {
 
     }
 
-    public EventModel(int id, String date, String description, String time) {
+    public CalendarEventModel(int id, String date, String description, String time) {
         this.id = id;
         this.date = date;
         this.description = description;

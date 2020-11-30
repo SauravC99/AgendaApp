@@ -35,7 +35,7 @@
             android:name=".CalendarActivity"
             android:parentActivityName=".LogInPage"></activity>
         <activity
-            android:name=".AddEventActivity"
+            android:name=".CalendarAddEventActivity"
             android:parentActivityName=".CalendarActivity"></activity>
     </application>
 

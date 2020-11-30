@@ -1,20 +1,17 @@
 package com.blackboxstudios.agendaplus;
 
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.content.ContentValues;
-import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.Nullable;
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class CalendarDatabaseHelper extends SQLiteOpenHelper {
 
     public static final String EVENTS_TABLE = "EVENTS_TABLE";
     public static final String COLUMN_EVENT_ID = "EVENT_ID";
@@ -22,7 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_EVENT_DESCRIPTION = "EVENT_DESCRIPTION";
     public static final String COLUMN_EVENT_TIME = "EVENT_TIME";
 
-    public DatabaseHelper(@Nullable Context context) {
+    public CalendarDatabaseHelper(@Nullable Context context) {
         super(context, "events.db", null, 1);
     }
 
@@ -37,13 +34,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean addOne(EventModel eventModel) {
+    public boolean addOne(CalendarEventModel calendarEventModel) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
-        cv.put(COLUMN_EVENT_DATE, eventModel.getDate());
-        cv.put(COLUMN_EVENT_DESCRIPTION, eventModel.getDescription());
-        cv.put(COLUMN_EVENT_TIME, eventModel.getTime());
+        cv.put(COLUMN_EVENT_DATE, calendarEventModel.getDate());
+        cv.put(COLUMN_EVENT_DESCRIPTION, calendarEventModel.getDescription());
+        cv.put(COLUMN_EVENT_TIME, calendarEventModel.getTime());
 
         long insert = db.insert(EVENTS_TABLE, null, cv);
         if (insert == -1) {
@@ -54,8 +51,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public List<EventModel> getAll() {
-        List<EventModel> returnList = new ArrayList<>();
+    public List<CalendarEventModel> getAll() {
+        List<CalendarEventModel> returnList = new ArrayList<>();
         String queryString = "SELECT * FROM " + EVENTS_TABLE;
 
         SQLiteDatabase db = this.getReadableDatabase();
@@ -67,7 +64,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 String description = cursor.getString(2);
                 String time = cursor.getString(3);
 
-                EventModel newEvent = new EventModel(id, date, description, time);
+                CalendarEventModel newEvent = new CalendarEventModel(id, date, description, time);
                 returnList.add(newEvent);
 
             } while (cursor.moveToNext());
@@ -80,7 +77,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return returnList;
     }
 
-    public boolean deleteEvent(EventModel event) {
+    public boolean deleteEvent(CalendarEventModel event) {
         SQLiteDatabase db = this.getWritableDatabase();
         String queryString = "DELETE FROM " + EVENTS_TABLE + " WHERE " + COLUMN_EVENT_DESCRIPTION + " = " + event.getDescription();
 
@@ -106,7 +103,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 String description = cursor.getString(2);
                 String time = cursor.getString(3);
 
-                EventModel newEvent = new EventModel(id, date, description, time);
+                CalendarEventModel newEvent = new CalendarEventModel(id, date, description, time);
                 String newEventString = newEvent.toString();
                 returnList.add(newEventString);
 
