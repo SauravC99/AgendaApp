@@ -44,6 +44,9 @@
         <activity
             android:name=".CalendarAddEventActivity"
             android:parentActivityName=".CalendarActivity"></activity>
+        <activity
+            android:name=".zzTestHome"
+            android:parentActivityName=".LogInPage"></activity>
     </application>
 
 </manifest>
