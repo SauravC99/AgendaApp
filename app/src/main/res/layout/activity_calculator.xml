@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#292B29"
-    tools:context=".Calculator"
+    tools:context=".CalculatorActivity"
     android:weightSum="6">
     <TextView
         android:id="@+id/screen"

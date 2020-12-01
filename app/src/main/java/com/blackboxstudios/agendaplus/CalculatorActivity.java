@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Calculator extends AppCompatActivity
+public class CalculatorActivity extends AppCompatActivity
 {
     //private declaration
     private TextView Screen;
