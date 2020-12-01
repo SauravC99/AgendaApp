@@ -22,7 +22,6 @@ public class CalendarActivity extends AppCompatActivity {
     private ImageButton btnAddNewEvent;
     private ArrayList<String> mEventStrings = new ArrayList<>();
     private String dateString;
-    private long long_date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +32,8 @@ public class CalendarActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         btnAddNewEvent = (ImageButton) findViewById(R.id.btnAddNewEvent);
 
+        // Called anytime the user changes the date by clicking on a new date.
+        // Changes the date clicked into a string format.
         mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView calendarView, int year, int month, int day) {
@@ -41,7 +42,8 @@ public class CalendarActivity extends AppCompatActivity {
                 getDateEvents(dateString);
             }
         });
-
+        // Called when the user selects to add a new event.
+        // Passes the date string created by DateChangeListener.
         btnAddNewEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,7 +53,9 @@ public class CalendarActivity extends AppCompatActivity {
             }
         });
     }
-
+    /*
+    * Gets a list of all events in the database and displays them in the RecyclerView
+    */
     private void getAll() {
         CalendarDatabaseHelper dbHelper = new CalendarDatabaseHelper(CalendarActivity.this);
         List<CalendarEventModel> dateEvents = dbHelper.getAll();
@@ -61,7 +65,9 @@ public class CalendarActivity extends AppCompatActivity {
         }
         initRecyclerView();
     }
-
+    /*
+    * Gets a list of the selected date's events from the database and displays them in the RecyclerView.
+    */
     private void getDateEvents(String dateString) {
         CalendarDatabaseHelper dbHelper = new CalendarDatabaseHelper(CalendarActivity.this);
         List<String> dateEvents = dbHelper.getAllDateEvents(dateString);
@@ -70,7 +76,7 @@ public class CalendarActivity extends AppCompatActivity {
         }
         initRecyclerView();
     }
-
+    // Initializes the RecyclerView layout. 
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(mEventStrings, this);

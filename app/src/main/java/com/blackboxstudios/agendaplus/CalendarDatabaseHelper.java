@@ -23,6 +23,7 @@ public class CalendarDatabaseHelper extends SQLiteOpenHelper {
         super(context, "events.db", null, 1);
     }
 
+    // Creates the Database Table for the CalendarEventModel objects.
     @Override
     public void onCreate(SQLiteDatabase db) {
         String createTableStatement = "CREATE TABLE " + EVENTS_TABLE + " (" + COLUMN_EVENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_EVENT_DATE + " TEXT, " + COLUMN_EVENT_DESCRIPTION + " TEXT, " + COLUMN_EVENT_TIME + " TEXT)";
@@ -34,6 +35,7 @@ public class CalendarDatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    // Adds a new CalendarEventModel object to the database.
     public boolean addOne(CalendarEventModel calendarEventModel) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -51,6 +53,7 @@ public class CalendarDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    // Returns all CalendarEventModel objects in the database.
     public List<CalendarEventModel> getAll() {
         List<CalendarEventModel> returnList = new ArrayList<>();
         String queryString = "SELECT * FROM " + EVENTS_TABLE;
@@ -77,6 +80,7 @@ public class CalendarDatabaseHelper extends SQLiteOpenHelper {
         return returnList;
     }
 
+    // Deletes the CalendarEventModel Object of a given description.
     public boolean deleteEvent(CalendarEventModel event) {
         SQLiteDatabase db = this.getWritableDatabase();
         String queryString = "DELETE FROM " + EVENTS_TABLE + " WHERE " + COLUMN_EVENT_DESCRIPTION + " = " + event.getDescription();
@@ -90,6 +94,7 @@ public class CalendarDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    // Returns the CalendarEventModel objects of the date selected by the user in the CalendarActivity class.
     public List<String> getAllDateEvents(String selectedDate) {
         List<String> returnList = new ArrayList<>();
         String queryString = "SELECT * FROM " + EVENTS_TABLE + " WHERE " + COLUMN_EVENT_DATE + " ='" + selectedDate + "'";

@@ -17,20 +17,6 @@ public class CalendarAddEventActivity extends AppCompatActivity {
     private EditText eventTime;
     private Button btnSubmitEvent;
     private TextView tvDate;
-    /*
-    public long stringToLong(String dateString) {
-        try {
-            SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-            Date date = sdf.parse(dateString);
-            long long_date = date.getTime();
-            return long_date;
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return -1;
-        }
-    }
-
-     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +31,15 @@ public class CalendarAddEventActivity extends AppCompatActivity {
 
         tvDate.setText(date);
 
+        /*
+        * Creates a new CalendarEventModel object when the save button is clicked.
+        * Displays a toast that notifies whether the object was saved to the DB successfully.
+        */
         btnSubmitEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 CalendarEventModel calendarEventModel;
                 try {
-                    // String dateString = tvDate.getText().toString();
-                    //long dateLong = stringToLong(dateString);
                     calendarEventModel = new CalendarEventModel(-1, tvDate.getText().toString(), eventDesc.getText().toString(), eventTime.getText().toString());
                     Toast.makeText(CalendarAddEventActivity.this, calendarEventModel.toString(), Toast.LENGTH_SHORT).show();
                 }

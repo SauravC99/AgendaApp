@@ -25,6 +25,7 @@ public class RecyclerViewAdapter extends  RecyclerView.Adapter<RecyclerViewAdapt
         mContext = context;
     }
     
+    // Inflates the layout for the RecyclerView
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -47,11 +48,13 @@ public class RecyclerViewAdapter extends  RecyclerView.Adapter<RecyclerViewAdapt
         });
     }
 
+    // Returns the number of items in the events list.
     @Override
     public int getItemCount() {
         return mEvents.size();
     }
 
+    // Creates the ViewHolder class.
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView eventItem;
