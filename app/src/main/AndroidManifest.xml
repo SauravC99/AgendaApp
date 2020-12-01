@@ -9,44 +9,53 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".LogInPage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
-            android:name=".CalculatorActivity"
-            android:parentActivityName=".LogInPage" />
+            android:name=".GuestLogInPage"
+            android:parentActivityName=".LogInPage" >
+        </activity>
         <activity
             android:name=".HomePage_Navigation"
             android:label="@string/title_activity_home_page__navigation"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".CalculatorActivity"
+            android:parentActivityName=".HomePage_Navigation" >
+        </activity>
+        <activity
+            android:name=".CalendarActivity"
+            android:parentActivityName=".HomePage_Navigation" >
+        </activity>
+        <activity
+            android:name=".CalendarAddEventActivity"
+            android:parentActivityName=".CalendarActivity" >
+        </activity>
         <activity
             android:name=".ZoomLinksPage"
-            android:parentActivityName=".LogInPage"></activity>
-        <activity
-            android:name=".GuestLogInPage"
-            android:parentActivityName=".LogInPage"></activity>
+            android:parentActivityName=".HomePage_Navigation" >
+        </activity>
+
+
         <activity
             android:name=".StartUpPage"
             android:parentActivityName=".LogInPage">
-
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LogInPage" />
         </activity>
-        <activity android:name=".LogInPage">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".CalendarActivity"
-            android:parentActivityName=".LogInPage"></activity>
-        <activity
-            android:name=".CalendarAddEventActivity"
-            android:parentActivityName=".CalendarActivity"></activity>
         <activity
             android:name=".zzTestHome"
-            android:parentActivityName=".LogInPage"></activity>
+            android:parentActivityName=".LogInPage" >
+        </activity>
+
     </application>
 
 </manifest>
