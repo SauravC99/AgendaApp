@@ -21,7 +21,11 @@ public class LogInPage extends AppCompatActivity {
 
     /** Called when the user taps the Sign In button */
     public void signIn(View view) {
-        Intent intent = new Intent(this, CalendarActivity.class);
+        //Intent intent = new Intent(this, StartUpPage.class);
+        Intent intent = new Intent(this, HomePage_Navigation.class);
+        //ed edited - change to work onto homepage 11/26
+
+        //Intent intent = new Intent(this, CalendarActivity.class);
         EditText userName = (EditText) findViewById(R.id.editTextEmailAddress);
         EditText password = (EditText) findViewById(R.id.editTextPassword);
         String messageUser = userName.getText().toString();
@@ -37,8 +41,11 @@ public class LogInPage extends AppCompatActivity {
 
     /** Called when the user taps the Guest Sign In button */
     public void goToGuestLogIn(View view) {
+        Intent intent = new Intent(this, GuestLogInPage.class);
+        //For testing
+       // Intent intent = new Intent(this, Calculator.class);
         //Intent intent = new Intent(this, GuestLogInPage.class);
-        Intent intent = new Intent(this, ZoomLinksPage.class);
+        //Intent intent = new Intent(this, ZoomLinksPage.class);
         startActivity(intent);
     }
 

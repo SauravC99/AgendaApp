@@ -10,6 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Calculator"
+            android:parentActivityName=".LogInPage" />
+        <activity
+            android:name=".HomePage_Navigation"
+            android:label="@string/title_activity_home_page__navigation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".ZoomLinksPage"
             android:parentActivityName=".LogInPage"></activity>
         <activity
