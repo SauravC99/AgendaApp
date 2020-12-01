@@ -17,8 +17,11 @@
             android:label="@string/title_activity_home_page__navigation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".ZoomLinksPage"
+            android:parentActivityName=".LogInPage"></activity>
+        <activity
             android:name=".GuestLogInPage"
-            android:parentActivityName=".LogInPage" />
+            android:parentActivityName=".LogInPage"></activity>
         <activity
             android:name=".StartUpPage"
             android:parentActivityName=".LogInPage">
@@ -35,6 +38,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".CalendarActivity"
+            android:parentActivityName=".LogInPage"></activity>
+        <activity
+            android:name=".CalendarAddEventActivity"
+            android:parentActivityName=".CalendarActivity"></activity>
     </application>
 
 </manifest>

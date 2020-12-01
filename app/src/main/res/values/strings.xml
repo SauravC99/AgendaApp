@@ -16,8 +16,19 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="add_item_button">addItemButton</string>
+    <string name="view_calendar">View Calendar</string>
+    <string name="event_item">Event</string>
+    <string name="time_item">Time</string>
+    <string name="add_event_time">Add Event Time</string>
+    <string name="add_event_description">Add Event Description</string>
+    <string name="save">Save</string>
+    <string name="tv_date">Date</string>
+    <string name="button_addClass">Add Class</string>
+    <string name="button_classExample">Class</string>
+    <string name="button_ok">OK</string>
+    <string name="button_delete">Delete</string>
 </resources>
