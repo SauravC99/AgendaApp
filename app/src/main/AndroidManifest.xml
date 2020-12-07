@@ -48,6 +48,10 @@
             android:name=".AddClassToScheduleActivity"
             android:parentActivityName=".ClassScheduleActivity" >
         </activity>
+        <activity
+            android:name=".DeleteClassFromScheduleActivity"
+            android:parentActivityName=".ClassScheduleActivity" >
+        </activity>
 
 
         <activity

@@ -81,9 +81,23 @@ public class ClassDatabaseHelper extends SQLiteOpenHelper {
     }
 
     // Deletes the ClassModel Object of a given description.
+    /*
     public boolean deleteClass(ClassModel newClass) {
         SQLiteDatabase db = this.getWritableDatabase();
         String queryString = "DELETE FROM " + CLASSES_TABLE + " WHERE " + COLUMN_CLASS_NAME + " = " + newClass.getClassName();
+
+        Cursor cursor = db.rawQuery(queryString, null);
+        if (cursor.moveToFirst()) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+     */
+    public boolean deleteClass(String class_name) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String queryString = "DELETE FROM " + CLASSES_TABLE + " WHERE " + COLUMN_CLASS_NAME + " = " + class_name;
 
         Cursor cursor = db.rawQuery(queryString, null);
         if (cursor.moveToFirst()) {
