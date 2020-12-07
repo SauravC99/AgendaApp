@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class AddClassToScheduleActivity extends AppCompatActivity {
 
-    private static final String TAG = "AddClassToSchedule";
+    private static final String TAG = "AddClassToScheduleActivity";
 
     private EditText etClassStartTime;
     private EditText etClassEndTime;
