@@ -38,4 +38,8 @@ public class zzTestHome extends AppCompatActivity {
         Intent intent = new Intent(this, HomePage_Navigation.class);
         startActivity(intent);
     }
+    public void g(View view) {
+        Intent intent = new Intent(this, ClassScheduleActivity.class);
+        startActivity(intent);
+    }
 }

@@ -14,7 +14,7 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.TextView;
 
-public class RecyclerViewAdapter extends  RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private static final String TAG = "RecyclerViewAdapter";
 
     private ArrayList<String> mEvents = new ArrayList<>();

@@ -40,6 +40,14 @@
             android:name=".ZoomLinksPage"
             android:parentActivityName=".HomePage_Navigation" >
         </activity>
+        <activity
+            android:name=".ClassScheduleActivity"
+            android:parentActivityName=".HomePage_Navigation" >
+        </activity>
+        <activity
+            android:name=".AddClassToScheduleActivity"
+            android:parentActivityName=".ClassScheduleActivity" >
+        </activity>
 
 
         <activity
