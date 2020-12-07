@@ -25,6 +25,10 @@
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
+            android:name=".Home">
+
+        </activity>
+        <activity
             android:name=".CalculatorActivity"
             android:parentActivityName=".HomePage_Navigation" >
         </activity>
@@ -41,6 +45,15 @@
             android:parentActivityName=".HomePage_Navigation" >
         </activity>
         <activity
+
+            android:name=".TomatoPage"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".AlarmPage"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".ClassScheduleActivity"
             android:parentActivityName=".HomePage_Navigation" >
         </activity>
@@ -49,6 +62,8 @@
             android:parentActivityName=".ClassScheduleActivity" >
         </activity>
 
+
+        </activity>
 
         <activity
             android:name=".StartUpPage"
