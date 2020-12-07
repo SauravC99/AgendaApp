@@ -25,7 +25,7 @@ public class LogInPage extends AppCompatActivity {
         //Intent intent = new Intent(this, HomePage_Navigation.class);
         //ed edited - change to work onto homepage 11/26
 
-        Intent intent = new Intent(this, zzTestHome.class);
+        Intent intent = new Intent(this, Home.class);
 
         //Intent intent = new Intent(this, CalendarActivity.class);
         //EditText userName = (EditText) findViewById(R.id.editTextEmailAddress);
