@@ -21,7 +21,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         two.setOnClickListener(this);
         Button three = (Button)findViewById(R.id.calendar);
         three.setOnClickListener(this);
-        Button four = (Button)findViewById(R.id.tomato);
+        Button four = (Button)findViewById(R.id.timer);
         four.setOnClickListener(this);
         Button five = (Button)findViewById(R.id.alarm);
         five.setOnClickListener(this);
@@ -44,7 +44,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
                 intent = new Intent(this, CalendarActivity.class);
                 break;
 
-            case R.id.tomato:
+            case R.id.timer:
                 intent = new Intent(this, TomatoPage.class);
                 break;
 
