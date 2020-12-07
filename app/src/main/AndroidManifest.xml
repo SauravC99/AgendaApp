@@ -63,7 +63,7 @@
         </activity>
 
 
-        </activity>
+ 
 
         <activity
             android:name=".StartUpPage"
