@@ -45,12 +45,23 @@
             android:parentActivityName=".HomePage_Navigation" >
         </activity>
         <activity
+
             android:name=".TomatoPage"
             android:exported="true">
         </activity>
         <activity
             android:name=".AlarmPage"
             android:exported="true">
+        </activity>
+        <activity
+            android:name=".ClassScheduleActivity"
+            android:parentActivityName=".HomePage_Navigation" >
+        </activity>
+        <activity
+            android:name=".AddClassToScheduleActivity"
+            android:parentActivityName=".ClassScheduleActivity" >
+        </activity>
+
 
         </activity>
 

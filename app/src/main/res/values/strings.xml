@@ -31,4 +31,13 @@
     <string name="button_classExample">Class</string>
     <string name="button_ok">OK</string>
     <string name="button_delete">Delete</string>
+    <string name="classSchedule">Class Schedule</string>
+    <string name="tvClassSchedule">Class Schedule</string>
+    <string name="add_class">Add Class</string>
+    <string name="delete_class">Delete Class</string>
+    <string name="tv_add_class">Enter Class Information:</string>
+    <string name="saveClass">Save</string>
+    <string name="class_start_time">Class Starting Time</string>
+    <string name="class_end_time">Class End Time</string>
+    <string name="add_class_name">Class Name</string>
 </resources>
