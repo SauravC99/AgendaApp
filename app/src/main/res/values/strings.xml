@@ -43,4 +43,5 @@
     <string name="tv_delete_class">Enter the class name to delete:</string>
     <string name="delete_class_name">Enter Class Name</string>
     <string name="btn_submit_delete">Submit</string>
+    <string name="add_class_days">Class Days</string>
 </resources>

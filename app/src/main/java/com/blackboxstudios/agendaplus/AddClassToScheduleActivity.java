@@ -13,6 +13,7 @@ public class AddClassToScheduleActivity extends AppCompatActivity {
 
     private static final String TAG = "AddClassToScheduleActivity";
 
+    private EditText etClassDays;
     private EditText etClassStartTime;
     private EditText etClassEndTime;
     private EditText etClassName;
@@ -23,6 +24,7 @@ public class AddClassToScheduleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule_add_class_layout);
+        etClassDays = (EditText) findViewById(R.id.et_class_days);
         etClassStartTime = (EditText) findViewById(R.id.et_class_start_time);
         etClassEndTime = (EditText) findViewById(R.id.et_class_end_time);
         etClassName = (EditText) findViewById(R.id.et_class_name);
@@ -38,12 +40,12 @@ public class AddClassToScheduleActivity extends AppCompatActivity {
             public void onClick(View view) {
                 ClassModel newClass;
                 try {
-                    newClass = new ClassModel(-1, etClassStartTime.getText().toString(), etClassEndTime.getText().toString(), etClassName.getText().toString());
+                    newClass = new ClassModel(-1, etClassDays.getText().toString(), etClassStartTime.getText().toString(), etClassEndTime.getText().toString(), etClassName.getText().toString());
                     Toast.makeText(AddClassToScheduleActivity.this, newClass.toString(), Toast.LENGTH_SHORT).show();
                 }
                 catch (Exception e) {
                     Toast.makeText(AddClassToScheduleActivity.this, "Error adding to the database.", Toast.LENGTH_SHORT).show();
-                    newClass = new ClassModel(-1, "Start Time Error", "End Time Error", "Class Name Error");
+                    newClass = new ClassModel(-1, "Class Days Error", "Start Time Error", "End Time Error", "Class Name Error");
                 }
                 ClassDatabaseHelper dbHelper = new ClassDatabaseHelper(AddClassToScheduleActivity.this);
                 boolean test = dbHelper.addOne(newClass);

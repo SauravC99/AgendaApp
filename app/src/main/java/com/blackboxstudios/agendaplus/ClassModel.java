@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 public class ClassModel {
 
     private int id;
+    private String classDays;
     private String startTime;
     private String endTime;
     private String className;
@@ -13,8 +14,9 @@ public class ClassModel {
 
     }
 
-    public ClassModel(int id, String start, String end, String name) {
+    public ClassModel(int id, String days, String start, String end, String name) {
         this.id = id;
+        this.classDays = days;
         this.startTime = start;
         this.endTime = end;
         this.className = name;
@@ -22,7 +24,8 @@ public class ClassModel {
 
     @Override
     public String toString() {
-        return "Start time: " + startTime + '\n' +
+        return "Day: " + classDays + '\n' +
+                "Start time: " + startTime + '\n' +
                 "End time: " + endTime + '\n' +
                 "Class name: " + className;
     }
@@ -34,6 +37,10 @@ public class ClassModel {
     public void setId(int id) {
         this.id = id;
     }
+
+    public String getClassDays() { return classDays; }
+
+    public void setClassDays(String classDays) { this.classDays = classDays; }
 
     public String getStartTime() {
         return startTime;
