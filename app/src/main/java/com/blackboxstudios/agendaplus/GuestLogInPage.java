@@ -23,7 +23,7 @@ public class GuestLogInPage extends AppCompatActivity {
     //sends it to next page
     public void getGuestName(View view) {
      //   Intent intent = new Intent(this, StartUpPage.class);
-        Intent intent = new Intent(this, HomePage_Navigation.class);
+        Intent intent = new Intent(this, Home.class);
         //ed edited - change to work onto homepage 11/26
         EditText guestName = (EditText) findViewById(R.id.editTextGuestName);
         String messageGuest = guestName.getText().toString();
