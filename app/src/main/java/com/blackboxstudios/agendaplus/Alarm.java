@@ -8,10 +8,10 @@ import android.content.Intent;
 
 public class Alarm extends BroadcastReceiver {
     //executes a sound whenever the alarm is fired
-    //add ability to choose what ringtone user may want to use?
+    //add ability to choose ringtone
     @Override
     public void onReceive(Context context, Intent intent) {
         MediaPlayer media = MediaPlayer.create(context, Settings.System.DEFAULT_RINGTONE_URI);  //set ringtone
-        media.start();      //executes the mediaPlayer object
+        media.start();      //executes
     }
 }

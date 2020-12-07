@@ -41,6 +41,7 @@ public class TomatoPage extends AppCompatActivity {
         pause.setVisibility(View.INVISIBLE);
         stop.setVisibility(View.INVISIBLE);
 
+        //starttimer() function when play button clicked
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +50,7 @@ public class TomatoPage extends AppCompatActivity {
             }
         });
 
-
+        //pausetimer() when pause clicked
         pause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +59,7 @@ public class TomatoPage extends AppCompatActivity {
             }
         });
 
-
+        //stoptimer() when stop clicked
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,7 +94,6 @@ public class TomatoPage extends AppCompatActivity {
                 else {
                     Toast.makeText(getApplicationContext(), "Take a 5 minute break.", Toast.LENGTH_SHORT).show();
                 }
-                //TODO: prompt what time to start your next round. i.e. "Take a break and come back at 8:10am"
             }
         }.start();
         play.setVisibility((View.INVISIBLE));
@@ -121,7 +121,7 @@ public class TomatoPage extends AppCompatActivity {
             pause.setVisibility(View.VISIBLE);
         }
     }
-
+    //actively updates timer every second
     private void updateCountdownText() {
         int minutes = (int) (timeLeftInMillis / 1000) / 60;
         int seconds = (int) (timeLeftInMillis / 1000) % 60;
@@ -132,7 +132,6 @@ public class TomatoPage extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        //TODO: remove background timer, hide notifications
     }
 
     @Override
@@ -140,12 +139,11 @@ public class TomatoPage extends AppCompatActivity {
         super.onPause();
         if(timerState == TimerState.Running) {
             timer.cancel();
-            //TODO: start background timer, show notifications
         }
         else if(timerState == TimerState.Pause) {
-            //TODO: show notifications
         }
     }
+
 
     /*
     @Override
