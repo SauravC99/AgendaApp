@@ -25,6 +25,8 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         four.setOnClickListener(this);
         Button five = (Button)findViewById(R.id.alarm);
         five.setOnClickListener(this);
+        Button six = (Button)findViewById(R.id.schedule);
+        six.setOnClickListener(this);
     }
 
     @Override
@@ -51,6 +53,11 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
             case R.id.alarm:
                 intent = new Intent(this, AlarmPage.class);
                 break;
+
+            case R.id.schedule:
+                intent = new Intent(this, ClassScheduleActivity.class);
+                break;
+
             default:
                 break;
         }
